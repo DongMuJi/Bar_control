@@ -12,10 +12,9 @@ This package function is that  control the robot by the force sensor in the ros.
 
 
 3. Make a rule   
-  
-  -Put the 40-bar_control.rules in the /etc/udev/rules.d    
-  -sudo service udev reload    
-  -sudo service udev restar
+  Put the 40-bar_control.rules in the /etc/udev/rules.d    
+  sudo service udev reload    
+  sudo service udev restar
 
 
 4. You can change some params in the launch file then roslaunch the file.
