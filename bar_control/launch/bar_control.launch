@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+	<!--TODO-->
+        <param name="topic_cmd" value="/cmd_vel_mux/input/teleop"/> <!-- which topic to publish the speed -->
+	<!--linear speed (-1,1), angular speed(-1,1) -->
+	<param name="linear_limit" value="1.0"/>
+	<param name="angular_limit" value="1.0"/>
+	<param name="proc_sensor" value="100"/>
+	<!--proc_x_one_hand and proc_y_one_hand are the weights of the linear.x and linear.y when the robot rotating with one hand -->
+        <param name="proc_x_one_hand" value="1.0"/>
+	<param name="proc_y_one_hand" value="0.0"/>
+	<!--proc_x_two_hands and proc_y_two_hands are the weights of the linear.x and linear.y when the robot rotating with two hands -->
+	<param name="proc_x_two_hands" value="0.0"/>
+	<param name="proc_y_two_hands" value="0.0"/>
+	<node name="serial_listen_node" pkg="bar_control" type="serial_listen_node" respawn="false"/> 
+	<node name="deal_data" pkg="bar_control" type="deal_data" respawn="false"/>
+	<node name="change_data" pkg="bar_control" type="change_data" respawn="false"/>       
+</launch>
